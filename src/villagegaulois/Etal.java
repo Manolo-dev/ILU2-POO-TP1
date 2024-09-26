@@ -44,7 +44,7 @@ public class Etal {
 			return "L'étal de " + vendeur.getNom() + " est garni de " + quantite
 					+ " " + produit + "\n";
 		}
-		return "L'étal est libre";
+		return "L'étal est libre\n";
 	}
 
 	public String acheterProduit(int quantiteAcheter, Gaulois acheteur) {
