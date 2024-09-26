@@ -59,5 +59,9 @@ public class Village {
 
 	private static class Marche {
 		private Etal[] etals;
+
+		public Marche(int nbEtals) {
+			etals = new Etal[nbEtals];
+		}
 	}
 }
