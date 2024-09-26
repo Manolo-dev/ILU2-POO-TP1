@@ -77,5 +77,21 @@ public class Village {
 			}
 			return -1;
 		}
+
+		public Etal[] trouverEtals(String produit) {
+			int nbEtals = 0;
+			int indicesEtals[] = new int[etals.length];
+			for(int i = 0; i < etals.length; i++) {
+				if(etals[i] != null && etals[i].contientProduit(produit)) {
+					indicesEtals[nbEtals] = i;
+					nbEtals++;
+				}
+			}
+			Etal[] etalsProduit = new Etal[nbEtals];
+			for(int i = 0; i < nbEtals; i++) {
+				etalsProduit[i] = etals[indicesEtals[i]];
+			}
+			return etalsProduit;
+		}
 	}
 }
