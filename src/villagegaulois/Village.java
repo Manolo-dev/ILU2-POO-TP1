@@ -68,5 +68,14 @@ public class Village {
 			etals[indiceEtal] = new Etal();
 			etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
 		}
+
+		public int trouverEtalLibre() {
+			for(int i = 0; i < etals.length; i++) {
+				if(etals[i] == null) {
+					return i;
+				}
+			}
+			return -1;
+		}
 	}
 }
