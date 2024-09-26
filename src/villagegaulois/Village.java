@@ -123,4 +123,32 @@ public class Village {
 			return result.toString();
 		}
 	}
+
+	public static void main(String[] args) {
+		Village village           = new Village("Alesia", 10);
+		Chef       chef           = new Chef("Vercingetorix", 50, village);
+		Gaulois asterix           = new Gaulois(   "Astérix", 10);
+		Gaulois  obelix           = new Gaulois(    "Obélix", 10);
+		Marche marche             = new Marche(5);
+		StringBuilder trouverEtal = new StringBuilder();
+
+		village.setChef        (chef);
+		village.ajouterHabitant(asterix);
+		village.ajouterHabitant(obelix);
+
+		marche.utiliserEtal(marche.trouverEtalLibre(), asterix, "Potion magique", 10);
+		marche.utiliserEtal(marche.trouverEtalLibre(),  obelix,         "Menhir", 5);
+		marche.utiliserEtal(marche.trouverEtalLibre(), asterix, "Potion magique", 5);
+
+		for(Etal etal : marche.trouverEtals("Potion magique")) {
+			trouverEtal.append(etal.afficherEtal());
+		}
+
+		Etal etalVendeur = marche.trouverVendeur(asterix);
+		
+		System.out.println(trouverEtal.toString());
+		System.out.println(village.afficherVillageois());
+		System.out.println(etalVendeur.acheterProduit(5, obelix));
+		System.out.println(marche.afficherMarche());
+	}
 }
