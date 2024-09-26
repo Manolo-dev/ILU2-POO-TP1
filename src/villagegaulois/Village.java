@@ -63,5 +63,10 @@ public class Village {
 		public Marche(int nbEtals) {
 			etals = new Etal[nbEtals];
 		}
+
+		public void utiliserEtal(int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
+			etals[indiceEtal] = new Etal();
+			etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
+		}
 	}
 }
