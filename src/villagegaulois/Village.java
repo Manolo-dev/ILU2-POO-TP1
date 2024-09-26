@@ -56,4 +56,8 @@ public class Village {
 		}
 		return chaine.toString();
 	}
+
+	private static class Marche {
+		private Etal[] etals;
+	}
 }
