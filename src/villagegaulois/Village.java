@@ -102,5 +102,25 @@ public class Village {
 			}
 			return null;
 		}
+
+		public String afficherMarche() {
+			StringBuilder result = new StringBuilder();
+
+			int nbEtalVide = etals.length;
+
+			for(Etal etal : etals) {
+				if(etal == null) {
+					continue;
+				}
+				result.append(etal.afficherEtal());
+				nbEtalVide--;
+			}
+
+			if(nbEtalVide != 0) {
+				result.append("Il reste " + nbEtalVide + " étal(s) non utilisé(s) dans le marché.\n");
+			}
+
+			return result.toString();
+		}
 	}
 }
